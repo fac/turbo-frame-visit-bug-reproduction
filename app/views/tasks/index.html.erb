@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= turbo_frame_tag "tasks", data: { turbo_action: "advance" } do %>
+  <h2>On the index page</h2>
+  <div data-controller="navigate" data-navigate-url-value="<%= task_url("the_task") %>">
+    <button type="button" data-action="navigate#visit">visit task</button>
+
+    <%= link_to "the task", task_url("this_task") %>
+  </div>
+<% end %>
+
